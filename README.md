@@ -84,22 +84,6 @@ maximization problem to a minimization problem by multiplying the expression by
 
 ![Final QUBO](readme_imgs/final_QUBO.png "Final QUBO")
 
-For the graph shown above, this QUBO results in the following Q matrix.  In the
-Q matrix (implemented as a dictionary using Ocean), we put the coefficients on
-the linear terms in our QUBO along the diagonal and the quadratic terms on the
-off-diagonal.
-
-|     | x_0 | x_1 | x_2 | x_3 | x_4 |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| x_0 | -2  | 2   | 2   | 0   | 0   |
-| x_1 | 0   | -2  | 0   | 2   | 0   |
-| x_2 | 0   | 0   | -3  | 2   | 2   |
-| x_3 | 0   | 0   | 0   | -3  | 2   |
-| x_4 | 0   | 0   | 0   | 0   | -2  |
-
-In the code, we create this Q matrix as a dictionary iteratively, looping over
-the edges in our graph just as we see in the summation of our QUBO expression.
-
 There are two parameters to be set by the user in this code:  chain strength and
 number of reads.  Since this is a small problem, we set a low number of reads
 (shown with `numruns = 10`).  For chain strength, we examine the
